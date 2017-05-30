@@ -14,4 +14,4 @@ responseFor' s
   | otherwise = "Whatever."
 
 isYell :: String -> Bool
-isYell s = s =~ "^[A-Z0-9!@#$%^&*()_+?,]+$" :: Bool
+isYell s = (s =~ "^[A-Z0-9!@#$%^&*()_+?,]+$" :: Bool) && not (s =~ "^[0-9,?]+$" :: Bool)
